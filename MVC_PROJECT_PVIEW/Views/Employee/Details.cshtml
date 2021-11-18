@@ -1,0 +1,14 @@
+﻿@model List<MVC_PROJECT_PVIEW.Models.EmployeeModel>
+<h2>Details</h2>
+
+
+@{
+    ViewBag.Title = "Details";
+    foreach (var item in Model)
+    {
+        if (item.EmpCode == Convert.ToString(TempData["EmpCode"]))
+        { Html.RenderPartial("EmployeePartial", item); }
+    }
+
+}
+
